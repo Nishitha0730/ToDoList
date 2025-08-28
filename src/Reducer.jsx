@@ -1,12 +1,9 @@
-import React, { useReducer, useState } from 'react';
+const initialState = {
+    todos: [],
+    filter: "all"
+};
 
 function todoReducer(state,action){
-
-    const initialState = {
-        todos: [],
-        filter: "all"
-    }
-
     switch(action.type){
         case "ADD_TODO":
             return {
@@ -24,7 +21,7 @@ function todoReducer(state,action){
                         todo.id === action.payload ? { ...todo, completed: !todo.completed } : todo
                     )
                 }
-            case "DELETE TODO":
+            case "DELETE_TODO":
                 return{
                     ...state,
                     todos: state.todos.filter(todo => todo.id !== action.payload)
