@@ -1,4 +1,10 @@
 function todoReducer(state,action){
+
+    const initialState = {
+        todos: [],
+        filter: "all"
+    }
+    
     switch(action.type){
         case "ADD_TODO":
             return {
