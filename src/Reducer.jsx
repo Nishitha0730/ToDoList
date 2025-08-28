@@ -4,7 +4,7 @@ function todoReducer(state,action){
         todos: [],
         filter: "all"
     }
-    
+
     switch(action.type){
         case "ADD_TODO":
             return {
@@ -41,3 +41,5 @@ function todoReducer(state,action){
             return state;
     }
 }
+
+export default todoReducer;
