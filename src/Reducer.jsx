@@ -21,6 +21,16 @@ function todoReducer(state,action){
                     ...state,
                     todos: state.todos.filter(todo => todo.id !== action.payload)
                 }
+            case "SET_FILTER":
+                return{
+                    ...state,
+                    filter: action.payload
+                }
+            case "CLEAR_COMPLETED":
+                return{
+                    ...state,
+                    todos: state.todos.filter(todo => !todo.completed)
+                }
         default:
             return state;
     }
